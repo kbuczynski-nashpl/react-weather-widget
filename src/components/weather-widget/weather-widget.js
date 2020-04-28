@@ -28,7 +28,7 @@ class WeatherWidget extends Component {
                             time: (new Date()).toTimeString(),
                             temperature: data.main,
                             weather: data.weather[0],
-                            weatherIcon: this.getWeatherIcon(data.weather[0].description)
+                            weatherIcon: this.getWeatherIcon(data.weather[0].main)
                         })
                     } else {
                       alert(data.message);
@@ -46,7 +46,7 @@ class WeatherWidget extends Component {
                     {this.state.location}&nbsp; {this.state.time}
                 </div>
                 <div className="row">
-                    <div className="col">
+                    <div className="col-9">
                         {this.state.weatherIcon}{this.state.weather.description}
                     </div>
                     <div className="col main-temperature">{this.state.temperature.temp}&#730;</div>
@@ -79,18 +79,16 @@ class WeatherWidget extends Component {
      * @returns {*}
      */
     getWeatherIcon(weather) {
-        switch (weather.replace(' ', '_')) {
-            case "LIGHT_RAIN":
-            case "MODERATE_RAIN":
+        switch (weather.toString().toLowerCase()) {
+            case "drizzle":
+            case "rain":
                 return <WiRain size={42} color='#fff'/>;
-            case "SUNNY":
+            case "sunny":
                 return <WiDaySunny size={42} color='#fff'/>
-            case 'WINDY':
+            case 'windy':
                 return <WiWindy size={42} color='#fff'/>
-            case 'SNOW':
+            case 'snow':
                 return <WiSnow size={42} color='#fff'/>
-            case "PARTLY_CLOUDY":
-                return <WiNightPartlyCloudy size={42} color='#fff'/>
             default:
                 return <WiAlien size={42} color='#fff'/>
         }
