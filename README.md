@@ -2,6 +2,9 @@
 - A simple weather widget using a ReactJs and OpenWeatherMap API
 - It was created to practice React framework basics
 
+
+![wether-image](https://imgur.com/a/sObfhGJ)
+
 ### Running
 To get the API response a user should visit [OpenWeatherMap](https://openweathermap.org/) to get his own API key
 The Key should be put in the `.env` file under `REACT_APP_WHEATHER_API_ID` key
