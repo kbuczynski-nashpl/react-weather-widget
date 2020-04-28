@@ -3,7 +3,7 @@
 - It was created to practice React framework basics
 
 
-![wether-image](https://imgur.com/a/sObfhGJ)
+![wether-image](https://i.imgur.com/yS5onSf.png)
 
 ### Running
 To get the API response a user should visit [OpenWeatherMap](https://openweathermap.org/) to get his own API key
